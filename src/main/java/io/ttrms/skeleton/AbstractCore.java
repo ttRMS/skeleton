@@ -17,7 +17,7 @@ public abstract class AbstractCore<Core extends AbstractCore<?, ?, ?, ?, ?, ?, ?
     protected Server server;
     protected Expunged expunged;
     protected PacketManager packetManager;
-    protected DiscordBot discordBot;
+    protected DiscordBot bot;
     @Setter protected Account account;
     @Setter protected Crypt crypt;
 }
