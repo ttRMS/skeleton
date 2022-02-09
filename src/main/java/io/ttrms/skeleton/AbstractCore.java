@@ -8,9 +8,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @ToString
-public abstract class AbstractCore<Core extends AbstractCore<?, ?, ?, ?, ?, ?, ?, ?, ?, ?>,
-        Config, Cache, Client, Server, Expunged, PacketManager, DiscordBot, Account, Crypt> {
-
+public abstract class AbstractCore<Config, Cache, Client, Server, Expunged, PacketManager, DiscordBot, Account, Crypt> {
     protected Config config;
     protected Cache cache;
     protected Client client;
