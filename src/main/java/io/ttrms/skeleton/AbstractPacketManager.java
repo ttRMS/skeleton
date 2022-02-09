@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 public abstract class AbstractPacketManager<Core extends AbstractCore<?, ?, ?, ?, ?, ?, ?, ?, ?>, ServerListener, ClientListener> {
-    @Getter protected final Core abstractCore;
-    protected final ServerListener serverListener;
-    protected final ClientListener clientListener;
+    @Getter protected final Core core;
+    protected ServerListener serverListener;
+    protected ClientListener clientListener;
 }
