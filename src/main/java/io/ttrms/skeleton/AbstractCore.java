@@ -3,12 +3,13 @@ package io.ttrms.skeleton;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
 @NoArgsConstructor
 @Getter
-@Setter
-public abstract class AbstractCore<Config, Cache, Client, Server,
-        Expunged, PacketManager, DiscordBot, Account> {
+@ToString
+public abstract class AbstractCore<Core extends AbstractCore<?, ?, ?, ?, ?, ?, ?, ?, ?, ?>,
+        Config, Cache, Client, Server, Expunged, PacketManager, DiscordBot, Account, Crypt> {
 
     protected Config config;
     protected Cache cache;
@@ -17,5 +18,6 @@ public abstract class AbstractCore<Config, Cache, Client, Server,
     protected Expunged expunged;
     protected PacketManager packetManager;
     protected DiscordBot discordBot;
-    protected Account account;
+    @Setter protected Account account;
+    @Setter protected Crypt crypt;
 }
