@@ -8,6 +8,11 @@ import lombok.RequiredArgsConstructor;
 public abstract class Handler<T, CoreT, SessionT, PacketT> {
     @Getter(AccessLevel.PROTECTED) private final CoreT core;
 
+    @SuppressWarnings("unused")
+    public Handler() {
+        this(null);
+    }
+
     /**
      * Do something with the provided packet and decides if it should be forwarded to a connected player
      *
