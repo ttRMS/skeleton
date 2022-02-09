@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public abstract class Handler<T, CoreT, SessionT, PacketT> {
+public abstract class Handler<T, CoreT, SessionT, PacketT, StoreT> {
     @Getter(AccessLevel.PROTECTED) private final CoreT core;
 
     @SuppressWarnings("unused")
@@ -25,5 +25,5 @@ public abstract class Handler<T, CoreT, SessionT, PacketT> {
 
     protected abstract boolean apply(SessionT session, T packet);
 
-    protected abstract IStore getStore();
+    protected abstract StoreT getStore();
 }
