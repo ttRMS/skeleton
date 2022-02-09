@@ -34,7 +34,7 @@ public class Handlers {
          * @return true if the packet should be forwarded, false to drop the packet
          */
         @SuppressWarnings("unchecked")
-        protected boolean handle(Session session, Packet packet) {
+        public boolean handle(Session session, Packet packet) {
             return apply(session, (T) packet);
         }
 
