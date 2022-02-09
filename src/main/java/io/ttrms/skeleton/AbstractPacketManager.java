@@ -6,8 +6,8 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @AllArgsConstructor
-public abstract class AbstractPacketManager<Core extends AbstractCore<?, ?, ?, ?, ?, ?, ?, ?, ?>, ServerListener, ClientListener> {
-    @Getter protected final Core core;
-    protected ServerListener serverListener;
-    protected ClientListener clientListener;
+public abstract class AbstractPacketManager<CoreT extends AbstractCore<?, ?, ?, ?, ?, ?, ?, ?, ?>, ServerListenerT, ClientListenerT> {
+    @Getter protected final CoreT core;
+    protected ServerListenerT serverListener;
+    protected ClientListenerT clientListener;
 }

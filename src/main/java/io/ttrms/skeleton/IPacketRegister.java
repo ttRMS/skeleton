@@ -1,6 +1,11 @@
 package io.ttrms.skeleton;
 
-public interface IPacketRegister<Register extends IPacketRegister<?, ?, Packet>, Handler extends Handlers.Handler<?, ?, ?, Packet>, Packet> {
-    Register add(Class<? extends Packet> packetClass, Handler handler);
-    Handler getHandler(Packet packet);
+public interface IPacketRegister<
+        RegisterT extends IPacketRegister<?, ?, PacketT>,
+        HandlerT extends Handler<?, ?, ?, PacketT>,
+        PacketT> {
+
+    RegisterT add(Class<? extends PacketT> packetClass, HandlerT handler);
+
+    HandlerT getHandler(PacketT packet);
 }

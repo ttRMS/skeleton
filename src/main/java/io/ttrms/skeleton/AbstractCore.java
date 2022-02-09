@@ -8,14 +8,14 @@ import lombok.ToString;
 @NoArgsConstructor
 @Getter
 @ToString
-public abstract class AbstractCore<Config, Cache, Client, Server, Expunged, PacketManager, DiscordBot, Account, Crypt> {
-    protected Config config;
-    protected Cache cache;
-    protected Client client;
-    protected Server server;
-    protected Expunged expunged;
-    protected PacketManager packetManager;
-    protected DiscordBot bot;
-    @Setter protected Account account;
-    @Setter protected Crypt crypt;
+public abstract class AbstractCore<ConfigT, CacheT, ClientT, ServerT, ExpungedT, PacketManagerT, DiscordBotT, AccountT, CryptT> {
+    protected ConfigT config;
+    protected CacheT cache;
+    protected ClientT client;
+    protected ServerT server;
+    protected ExpungedT expunged;
+    protected PacketManagerT packetManager;
+    protected DiscordBotT bot;
+    @Setter protected AccountT account;
+    @Setter protected CryptT crypt;
 }
