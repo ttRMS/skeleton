@@ -13,17 +13,11 @@ public abstract class Handler<T, CoreT, SessionT, PacketT, StoreT> {
         this(null);
     }
 
-    /**
-     * Do something with the provided packet and decides if it should be forwarded to a connected player
-     *
-     * @return true if the packet should be forwarded, false to drop the packet
-     */
-    @SuppressWarnings("unchecked")
-    public boolean handle(SessionT session, PacketT packet) {
-        return apply(session, (T) packet);
-    }
+    public abstract boolean handleIn(SessionT session, PacketT packet);
 
-    protected abstract boolean apply(SessionT session, T packet);
+    public abstract PacketT handleOut(SessionT session, PacketT packet);
+
+    public abstract void handlePostOut(SessionT session, PacketT packet);
 
     protected abstract StoreT getStore();
 }
