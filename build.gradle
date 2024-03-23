@@ -39,5 +39,5 @@ publishing {
 
 // Adds a task to IntelliJ that updates Gradle to the specified version
 task updateGradle(type: Wrapper) {
-    gradleVersion = '7.3.3'
+    gradleVersion = '8.7'
 }
